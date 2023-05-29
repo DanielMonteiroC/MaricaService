@@ -38,7 +38,21 @@ var clientes = [];
       var dataNascimento = document.getElementById("dataNascimento").value;
       var email = document.getElementById("email").value;
       var telefone = document.getElementById("telefone").value;
-
+      var senha = document.getElementById("senha").value;
+      var confirmarSenha = document.getElementById("confirmarSenha").value;
+  
+      if (senha !== confirmarSenha) {
+        alert("As senhas não coincidem. Por favor, verifique e tente novamente.");
+        return;
+      }
+  
+      var senhaRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).*$/;
+  
+      if (!senhaRegex.test(senha)) {
+        alert("A senha deve conter pelo menos um caractere maiúsculo e um caractere especial.");
+        return;
+      }
+  
       var hoje = new Date();
       var dataNascimentoObj = new Date(dataNascimento);
       var diffAnos = hoje.getFullYear() - dataNascimentoObj.getFullYear();
@@ -91,7 +105,8 @@ var clientes = [];
         estado: estado,
         dataNascimento: dataNascimento,
         email: email,
-        telefone: telefone
+        telefone: telefone,
+        senha: senha
       };
 
       clientes.push(cliente);
@@ -106,6 +121,9 @@ var clientes = [];
       document.getElementById("dataNascimento").value = "";
       document.getElementById("email").value = "";
       document.getElementById("telefone").value = "";
+      document.getElementById("senha").value = "";
+      document.getElementById("confirmarSenha").value = "";
+  
 
       atualizarListaClientes();
     }
