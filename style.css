@@ -231,7 +231,8 @@ button[type="submit"] {
 }
 
 footer {
-  display: block;
+  position: absolute;
+  display:block;
   bottom: 0;
   background-color: rgb(3, 3, 3);
   color: #FFF;
