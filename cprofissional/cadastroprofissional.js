@@ -1,13 +1,20 @@
+// Array que armazena os profissionais cadastrados
 var profissionais = [];
-
+    
+    // Função que atualiza a lista de profissionais exibida na página
     function atualizarListaProfissionais() {
+      // Obtém a referência da lista de profissionais na página
       var listaProfissionais = document.getElementById("listaProfissionais");
+      // Limpa a lista de profissionais
       listaProfissionais.innerHTML = "";
-
+      
+      // Itera sobre o array de profissionais
       for (var i = 0; i < profissionais.length; i++) {
         var profissional = profissionais[i];
-
+        
+        // Cria um novo elemento de lista para cada profissional
         var listItem = document.createElement("li");
+        // Preenche o conteúdo do item da lista com os dados do profissional
         listItem.innerHTML = "<strong>Nome Completo:</strong> " + profissional.nome + "<br>" +
                              "<strong>CPF:</strong> " + profissional.cpf + "<br>" +
                              "<strong>CEP:</strong> " + profissional.cep + "<br>" +
@@ -18,16 +25,21 @@ var profissionais = [];
                              "<strong>Data de Nascimento:</strong> " + profissional.dataNascimento + "<br>" +
                              "<strong>Email:</strong> " + profissional.email + "<br>" +
                              "<strong>Telefone:</strong> " + profissional.telefone;
-        listaProfissionais.appendChild(listItem);
+                             // Adiciona o item da lista à lista de profissionais na página
+                             listaProfissionais.appendChild(listItem);
       }
     }
-
+    // Obtém a referência ao formulário de cadastro na página
     var form = document.getElementById("cadastroForm");
+    // Registra um evento de envio (submit) do formulário para chamar a função cadastrarProfissional
     form.addEventListener("submit", cadastrarProfissional);
 
+    // Função que cadastra um novo profissional
     function cadastrarProfissional(event) {
+      // Previne o comportamento padrão do evento de envio do formulário
       event.preventDefault();
 
+      // Obtém os valores dos campos do formulário
       var nomeCompleto = document.getElementById("nome").value;
       var cpf = document.getElementById("cpf").value;
       var cep = document.getElementById("cep").value;
@@ -41,27 +53,29 @@ var profissionais = [];
       var senha = document.getElementById("senha").value;
       var confirmarSenha = document.getElementById("confirmarSenha").value;
   
+      // Verifica se as senhas digitadas são iguais
       if (senha !== confirmarSenha) {
         alert("As senhas não coincidem. Por favor, verifique e tente novamente.");
         return;
       }
 
+      // Verifica se a senha atende aos requisitos mínimos
       var senhaRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).*$/;
-  
       if (!senhaRegex.test(senha)) {
         alert("A senha deve conter pelo menos um caractere maiúsculo e um caractere especial.");
         return;
       }
 
+      // Verifica se os dados abaixo são válidos
       var hoje = new Date();
       var dataNascimentoObj = new Date(dataNascimento);
       var diffAnos = hoje.getFullYear() - dataNascimentoObj.getFullYear();
-
+      
       if (diffAnos < 18) {
         alert("Apenas pessoas com 18 anos ou mais podem se cadastrar.");
         return;
       }
-    
+  
       var cpfValido = /^\d{11}$/.test(cpf);
 
       if (!cpfValido) {
@@ -95,6 +109,7 @@ var profissionais = [];
         return;
       }
 
+      // Cria um objeto com os dados do profissional
       var profissional = {
         nome: nomeCompleto,
         empresa: nomeNegocio,
@@ -111,7 +126,8 @@ var profissionais = [];
         telefone: telefone,
         senha: senha
       };
-
+      
+      // Adiciona o novo profissional ao array de profissionais
       profissionais.push(profissional);
 
       document.getElementById("nome").value = "";
@@ -130,6 +146,7 @@ var profissionais = [];
       document.getElementById("senha").value = "";
       document.getElementById("confirmarSenha").value = "";
 
+      // Atualiza a lista de profissionais na página
       atualizarListaProfissionais();
     }
 
@@ -500,15 +517,22 @@ var profissionais = [];
     { name: 'Zootécnico(a)' }
   ];
 
+  // Obtém a referência do elemento select com o id profissao
   const selectElement = document.getElementById('profissao');
 
+  // Função que renderiza as opções do select
   const renderOptions = () => {
+    // Percorre o array de profissões
     PROFISSOES.forEach((profissao, index) => {
+      // Cria um elemento option
       const optionElement = document.createElement('option');
+      // Define o valor e o texto do option com o nome da profissão
       optionElement.value = profissao.name;
       optionElement.text = profissao.name;
+      // Adiciona o option no select
       selectElement.appendChild(optionElement);
     });
   };
   
+  // Chama a função para renderizar as opções
   renderOptions();
