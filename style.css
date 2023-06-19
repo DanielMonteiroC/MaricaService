@@ -1,5 +1,3 @@
-/* Estilos gerais */
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
@@ -188,6 +186,40 @@ section {
   text-align: center;
 }
   
+#cadastro {
+  background-color: transparent;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+#cadastro li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+#cadastro a {
+  display: block;
+  background-color: #428bca ;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#cadastro a:hover {
+  background-color: #3477db;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+}
+
 .container {
   max-width: 400px;
   margin: 100px auto;
