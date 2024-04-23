@@ -6,20 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maricá Service</title>
   <link rel="stylesheet" href="main/style.css">
-  <!--Style para modificar somente o footer da página-->
-  <style>  
-    footer{  
-      position: relative;
-      display:block;
-      bottom: 0;
-      background-color: rgb(3, 3, 3);
-      color: #FFF;
-      width: 100%;
-      height: 100px;    
-      text-align: center;
-      line-height: 100px;
-  }
-  </style>
+  
 </head>
 <body>
   <header>
@@ -42,33 +29,30 @@
     </ul>
   </nav>
 
-  <section>
-    <h2> Bem vindo a Maricá Service </h2>
-    <p> Encontre o serviço que precisa, perto e rápido. </p>
-  </section>
-
-  <section class="slider">
-    <div class="seta arrow-left"><i class="fas fa-chevron-circle-left"></i></div>
-      <img src="imagens/aperto-de-mao-feliz-do-reparador-de-automoveis-com-o-cliente-em-uma-oficina.jpg">
-      <img src="imagens/cliente-satisfeito-apertando-as-maos-com-mecanico-de-automoveis-feminino-em-uma-oficina.jpg">
-      <img src="imagens/homem-sorridente-pintando-as-paredes-de-sua-nova-casa.jpg">
-      <img src="imagens/mulher-em-uma-garagem-de-carro-recebendo-servico-mecanico-o-mecanico-trabalha-sob-o-capo-do-carro (1).jpg">
-    <div class="seta arrow-right"><i class="fas fa-chevron-circle-right"></i></div>
-    <div class="paginacao"></div>
-  
+  <div class="container">
+    <div class="slider">
+      <div class="seta arrow-left"><i class="fas fa-chevron-circle-left"></i></div>
+        <img src="imagens/aperto-de-mao-feliz-do-reparador-de-automoveis-com-o-cliente-em-uma-oficina.jpg">
+        <img src="imagens/cliente-satisfeito-apertando-as-maos-com-mecanico-de-automoveis-feminino-em-uma-oficina.jpg">
+        <img src="imagens/homem-sorridente-pintando-as-paredes-de-sua-nova-casa.jpg">
+        <img src="imagens/mulher-em-uma-garagem-de-carro-recebendo-servico-mecanico-o-mecanico-trabalha-sob-o-capo-do-carro (1).jpg">
+      <div class="seta arrow-right"><i class="fas fa-chevron-circle-right"></i></div>
+      <div class="paginacao"></div>
       <div class="botao"> <i class="far fa-circle"></i> </div>
       <div class="botao"> <i class="far fa-circle"></i> </div>
       <div class="botao"> <i class="far fa-circle"></i> </div>
       <div class="botao"> <i class="far fa-circle"></i> </div>
-  
     </div>
   
-  </section>
-
-  <section id= "cadastro">
-    <li><a href="ccliente/cadastrocliente.html"> Procurando por um profissional? </a></li>
-    <li><a href="cprofissional/cadastroprofissional.html"> Quer se cadastrar como profissional? </a></li>
-  </section>
+    <section id="cadastro">
+      <h2> Bem vindo a Maricá Service </h2>
+      <p> Encontre o serviço que precisa, perto e rápido. </p>
+      <ul>
+        <li><a href="ccliente/cadastrocliente.html"> Procurando por um profissional? </a></li>
+        <li><a href="cprofissional/cadastroprofissional.html"> Procurando por um cliente? </a></li>
+      </ul>
+    </section>
+  </div>
 
   <footer>
      2023 Maricá Service, All rights reserved.

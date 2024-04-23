@@ -23,7 +23,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 100px auto;
+    margin: 30px auto 70px;
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;
@@ -73,13 +73,16 @@ button[type="submit"]:hover {
 }
 
 footer {
-    position: relative;
+    position: fixed;
     display: block;
     bottom: 0;
     background-color: rgb(3, 3, 3);
-    color: #fff;
+    color: #FFF;
     width: 100%;
-    height: 100px;
+    height: 50px;    
     text-align: center;
-    line-height: 100px;
-}
+    line-height: 50px;
+    border: none;
+    border-top: 2px solid #FFF;
+    font-size: 14px;
+  }

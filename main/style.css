@@ -1,23 +1,22 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  background-color: #fff;
   margin: 0;
-  padding: 0 
+  padding: 0;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
   background-color: #428bca;
   color: #fff;
+  max-width: 100%;
 }
 
 h1 {
-  margin: 10px 0;
-  margin-top: 30px;
-  text-align :center;
+  margin: 20px  10px;
+  text-align: center;
 }
 
 nav .menu {
@@ -26,20 +25,19 @@ nav .menu {
   padding: 0;
   display: flex;
 }
-  
+
 nav .menu li {
   margin-right: 10px;
 }
-  
+
 nav .menu li a {
   text-decoration: none;
   color: #fff;
   padding: 10px;
   transition: background-color 0.3s ease;
 }
-  
+
 nav .menu li a:hover {
-  box-shadow: white;
   background-color: #2f3238;
 }
 
@@ -69,35 +67,42 @@ nav .menu li:hover ul {
   background-color: #428bca;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.informacoes {
+  position: absolute;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding:0 20px 70px;
+}
+
 .slider {
-  width: 100%;
-  height: 100%;
+  flex: 1;
+  width: 50%;
+  height: 50%;
   position: relative;
-  background: #242424;
+  background: fff;
   overflow: hidden;
 }
 
 .slider img {
-  width: 80%;
-  height: 10 0%;
+  width: 90%;
+  height: 100%;
   object-fit: cover;
   position: relative;
   margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   animation: fade 1s;
 }
 
 .slider .seta {
-  z-index: 10;
   position: absolute;
   margin: auto;
   top: 0;
   bottom: 0;
-  left: auto;
-  right: auto;
   width: auto;
   height: 1.5rem;
   font-size: 2.5em;
@@ -122,20 +127,16 @@ nav .menu li:hover ul {
 .slider .paginacao {
   position: absolute;
   margin: auto;
-  top: auto;
   bottom: 2%;
   left: 0;
   right: 0;
   width: 7rem;
-  height: auto;
   z-index: 5;
 }
 
 .slider .paginacao .botao {
-  width: auto;
-  height: auto;
   display: inline-flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   color: #fff;
 }
@@ -148,67 +149,74 @@ nav .menu li:hover ul {
     opacity: 1;
   }
 }
-  
+
 nav {
   background-color: #111111;
   color: #fff;
   padding: 10px;
   text-align: center;
 }
-  
+
 nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-  
+
 nav ul li {
   display: inline-block;
   margin-right: 10px;
 }
-  
+
 nav ul li a {
   color: #fff;
   text-decoration: none;
   padding: 5px 10px;
 }
-  
+
 nav ul li ul {
   display: none;
 }
-  
+
 nav ul li:hover ul {
   display: block;
 }
-  
+
 section {
+  flex: 1;
+  width: 50%;
   padding: 20px;
   text-align: center;
 }
-  
+
+section h2 {
+  margin-bottom: 0;
+}
+
+section p {
+  margin-top: 0;
+}
+
 #cadastro {
   background-color: transparent;
   padding: 20px;
   text-align: center;
-  position: absolute;
-  top: 110%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 999;
 }
 
 #cadastro li {
+  padding: 20px;
   margin-bottom: 10px;
   list-style: none;
 }
 
 #cadastro a {
-  display: block;
-  background-color: #428bca ;
+  display: inline-block;
+  background-color: #428bca;
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   border-radius: 5px;
   font-weight: bold;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -221,35 +229,35 @@ section {
 }
 
 .container {
-  max-width: 400px;
-  margin: 100px auto;
+  max-width: 100%;
+  margin: 0;
   background-color: #fff;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-  
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-  
+
 label {
   margin-top: 10px;
 }
-  
+
 input[type="text"],
 input[type="password"],
 select {
-  width: 25%;
+  width: 50%;
   height: 26px;
   border-radius: 5px;
   border: 1px solid #ccc;
   padding: 5px;
   margin-top: 5px;
 }
-  
+
 button[type="submit"] {
   width: 20%;
   height: 40px;
@@ -263,14 +271,16 @@ button[type="submit"] {
 }
 
 footer {
-  position: absolute;
-  display:block;
+  position: fixed;
+  display: block;
   bottom: 0;
   background-color: rgb(3, 3, 3);
   color: #FFF;
   width: 100%;
-  height: 100px;    
+  height: 50px;    
   text-align: center;
-  line-height: 100px;
+  line-height: 50px;
+  border: none;
+  border-top: 2px solid #FFF;
+  font-size: 14px;
 }
-  
