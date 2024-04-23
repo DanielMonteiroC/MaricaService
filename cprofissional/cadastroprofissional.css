@@ -7,7 +7,22 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-  
+
+.btn-voltar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #428bca;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 23px;
+}
+
 h1 {
     margin: 0;
     text-align: center;
@@ -44,7 +59,7 @@ label {
     background-color: #fff;
     color: #555;
     font-family: Arial, sans-serif;
-  }
+}
   
 #profissao option {
     background-color: #fff;
@@ -69,7 +84,6 @@ label {
 #profissao::-webkit-scrollbar-thumb:hover {
     background-color: #555;
 }
-  
 
 input[type="text"],
 input[type="password"],
@@ -116,5 +130,5 @@ footer {
     border: none;
     border-top: 2px solid #FFF;
     font-size: 14px;
-  }
+}
   
